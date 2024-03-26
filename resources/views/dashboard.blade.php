@@ -20,7 +20,7 @@
                             <th class="border-2">Juz Remaining</th>
                             <th class="border-2">Page</th>
                             <th class="border-2">Description</th>
-                            <th class="border-2">Action</th>
+                            <th class="border">Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -30,7 +30,11 @@
                                 <td class="border-2 text-center">{{ $recite->juz_remaining }}</td>
                                 <td class="border-2 text-center">{{ $recite->page }}</td>
                                 <td class="border-2 px-2">{{ $recite->description }}</td>
-                                <td class="border-2">
+                                <td class="border flex justify-center">
+                                    <a href="{{ route('recite.edit', $recite->id) }}" class="bg-yellow-800 hover:bg-yellow-700 active:bg-yellow-900 py-2 px-4 rounded text-white m-3">
+                                        {{ 'Edit' }}
+                                    </a>
+
                                     <form action="{{ route('recite.destroy', $recite->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')

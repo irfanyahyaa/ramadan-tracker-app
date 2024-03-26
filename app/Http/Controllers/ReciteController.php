@@ -29,4 +29,10 @@ class ReciteController extends Controller
         $recite->delete();
         return redirect()->route('dashboard')->with('status', 'Recite deleted successfully.');
     }
+
+    public function edit($id)
+    {
+        $recite = Recite::find($id);
+        return view('recite.edit', compact('recite'));
+    }
 }

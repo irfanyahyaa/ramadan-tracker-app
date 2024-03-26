@@ -30,6 +30,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/add-progress', [ReciteController::class, 'create'])->name('recite.create');
     Route::post('/add-progress', [ReciteController::class, 'store'])->name('recite.store');
     Route::delete('/delete/{id}', [ReciteController::class, 'destroy'])->name('recite.destroy');
+
+    Route::get('/edit-progress/{id}', [ReciteController::class, 'edit'])->name('recite.edit');
 });
 
 require __DIR__.'/auth.php';

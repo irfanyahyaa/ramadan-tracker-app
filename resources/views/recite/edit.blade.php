@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-center text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __("Add Progress Reciting Qur'an") }}
+            {{ __("Edit Progress Reciting Qur'an") }}
         </h2>
     </x-slot>
     <div class="py-8 px-12">
@@ -19,7 +19,7 @@
                                     <label class="text-white">Juz</label>
                                 </td>
                                 <td class="px-4 py-2">
-                                    <input type="number" name="juz" min="1" max="30" class="w-full border-2 border-white rounded-md p-2 text-black">
+                                    <input type="number" name="juz" min="1" max="30" class="w-full border-2 border-white rounded-md p-2 text-black" value="{{ $recite->juz }}">
                                 </td>
                             </tr>
                             <tr>
@@ -27,7 +27,7 @@
                                     <label class="text-white">Page</label>
                                 </td>
                                 <td class="px-4 py-2">
-                                    <input type="number" name="page" min="1" class="w-full border-2 border-white rounded-md p-2 text-black">
+                                    <input type="number" name="page" min="1" class="w-full border-2 border-white rounded-md p-2 text-black" value="{{ $recite->page }}">
                                 </td>
                             </tr>
                             <tr>
@@ -35,7 +35,7 @@
                                     <label class="text-white">Description</label>
                                 </td>
                                 <td class="px-4 py-2">
-                                    <textarea name="description" cols="30" rows="5" class="w-full border-2 border-white rounded-md p-2 text-black"></textarea>
+                                    <textarea name="description" cols="30" rows="5" class="w-full border-2 border-white rounded-md p-2 text-black">{{ $recite->description }}</textarea>
                                 </td>
                             </tr>
                             <tr>
