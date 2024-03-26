@@ -4,11 +4,14 @@
             {{ __("Progress Reciting Qur'an") }}
         </h2>
     </x-slot>
-
-    <div class="py-8">
+    <div class="py-8 px-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-900 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="px-6 text-gray-900 dark:text-gray-100">
+
+                    <a class="bg-cyan-800 hover:bg-cyan-700 active:bg-cyan-900 py-2 px-4 rounded text-white block mb-4 w-fit" href="{{ route('recite.create') }}">
+                        {{ 'Add Progress' }}
+                    </a>
 
                     <table class="table-auto w-full border-2 text-white">
                         <thead>
