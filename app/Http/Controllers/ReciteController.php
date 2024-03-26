@@ -14,7 +14,6 @@ class ReciteController extends Controller
 
     public function store(Request $request)
     {
-//        Recite::create($request->all());
         Recite::create([
             'juz' => $request->juz,
             'juz_remaining' => 30 - $request->juz,
@@ -22,5 +21,12 @@ class ReciteController extends Controller
             'description' => $request->description
         ]);
         return redirect()->route('dashboard')->with('status', 'Recite created successfully.');
+    }
+
+    public function destroy($id)
+    {
+        $recite = Recite::find($id);
+        $recite->delete();
+        return redirect()->route('dashboard')->with('status', 'Recite deleted successfully.');
     }
 }
