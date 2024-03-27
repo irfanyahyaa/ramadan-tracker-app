@@ -9,7 +9,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $recites = Recite::all();
+        $recites = Recite::all()->sortBy('page');
         return view('dashboard', compact('recites'));
     }
 }

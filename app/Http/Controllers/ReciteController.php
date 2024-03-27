@@ -35,4 +35,22 @@ class ReciteController extends Controller
         $recite = Recite::find($id);
         return view('recite.edit', compact('recite'));
     }
+
+    public function update(Request $request, $id)
+    {
+        $recite = Recite::find($id);
+//        $recite->update([
+//            'juz' => $request->juz,
+//            'juz_remaining' => 30 - $request->juz,
+//            'page' => $request->page,
+//            'description' => $request->description
+//        ]);
+        $recite->juz = $request->juz;
+        $recite->juz_remaining = 30 - $request->juz;
+        $recite->page = $request->page;
+        $recite->description = $request->description;
+        $recite->save();
+
+        return redirect()->route('dashboard')->with('status', 'Recite updated successfully.');
+    }
 }

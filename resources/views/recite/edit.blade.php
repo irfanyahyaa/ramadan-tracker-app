@@ -10,8 +10,9 @@
                 <div class="px-6 text-gray-900 dark:text-gray-100">
 
 
-                    <form action="{{ route('recite.store') }}" method="POST">
+                    <form action="{{ route('recite.update', $recite->id) }}" method="POST">
                         @csrf
+                        @method("PUT")
                         <table class="max-w-sm mx-auto">
                             <tbody>
                             <tr>
